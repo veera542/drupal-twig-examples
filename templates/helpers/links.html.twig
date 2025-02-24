@@ -1,0 +1,26 @@
+{% apply spaceless %}
+<a href="{{ link['#url'] }}" class="{{ classes }}" target="{{ link['#options'].attributes.target|default('_self') }}">
+    {% if 'accessible-link' in classes %}
+        <span class="screen-reader-text">
+    {% endif %}
+    {% if title %}
+        {{ title }}
+    {% else %}
+        {{ link['#title'] }}
+    {% endif %}
+    {% if 'accessible-link' in classes %}
+        </span>
+    {% endif %}
+    {% if 'arrow' in classes or classes == 'card__link' %}
+        <span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="29.707" height="30.914">
+                <g fill="#0678b9">
+                    <path d="M24 7.957H0v-2h24Z" data-name="Line 7"/>
+                    <path d="m24.293 8.414-7-7L18.707 0l7 7Z" data-name="Line 8"/>
+                    <path d="M18.707 13.914 17.293 12.5l7-7 1.414 1.414Z" data-name="Line 9"/>
+                </g>
+            </svg>
+        </span>
+    {% endif %}
+</a>
+{% endapply %}
