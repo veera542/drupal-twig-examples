@@ -1,0 +1,25 @@
+{# Loop through each main menu item #}
+{% for item in items %}
+    <li class="menu-item">
+        {# Render the main menu link and add 'aria-current' if it's the active item #}
+        <a href="{{ item.url }}"
+           {{ item.in_active_trail ? ' aria-current="page"' }}>
+            {{ item.title }}
+        </a>
+        {# Check if there are sub-menu items (dropdown) for this item #}
+        {% if item.below %}
+            <ul class="submenu">
+                {# Loop through each sub-menu item #}
+                {% for sub_item in item.below %}
+                    <li class="submenu-item">
+                        {# Render the sub-menu link and add 'aria-current' if it's the active item #}
+                        <a href="{{ sub_item.url }}"
+                           {{ sub_item.in_active_trail ? ' aria-current="page"' }}>
+                            {{ sub_item.title }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </li>
+{% endfor %}

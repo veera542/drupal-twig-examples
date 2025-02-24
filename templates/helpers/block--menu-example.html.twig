@@ -1,0 +1,12 @@
+{# Render a list of menu links inside a modal #}
+<ul class="menu-links">
+    {# Loop through each menu item and render it as a list item #}
+    {% for item in content['#items'] %}
+        <li class="menu-links__item">
+            {# Render the menu link with its URL and title #}
+            <a href="{{ item.url }}" class="menu-links__link">
+                {{ item.title }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>

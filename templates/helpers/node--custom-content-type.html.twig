@@ -1,0 +1,7 @@
+<div class="cta">
+    {% if content.field_hero_link|field_value %}
+        {% for item in content.field_hero_link|field_value %}
+            {% include '@custom/templates/helpers/links.html.twig' with {'link': item, 'classes': 'btn--primary'} %}
+        {% endfor %}
+    {% endif %}
+</div>

@@ -1,0 +1,16 @@
+<div class="paragraph-widget">
+   <section class="featured-section">
+      <div class="featured-section__images">
+         <div class="featured-section__top-image">
+            <img src="{{ file_url(content.field_top_image[0]['#media'].field_media_image.entity.uri.value | image_style('optimized')) }}" alt="">
+         </div>
+         <div class="featured-section__bottom-image">
+            <img src="{{ file_url(content.field_bottom_image[0]['#media'].field_media_image.entity.uri.value | image_style('optimized')) }}" alt="">
+         </div>
+      </div>
+      <div class="featured-section__content">
+         <h3 class="heading-large">{{ content.field_title|field_value }}</h3>
+         {{ content.field_description|field_value }}
+      </div>
+   </section>
+</div>
